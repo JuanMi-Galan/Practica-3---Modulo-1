@@ -16,10 +16,10 @@ Integrante:
 4. [Requisitos](#requisitos)
 5. [Estructura del Proyecto](#estructura-del-proyecto)
 6. [Instalación](#instalación)
-7. [Uso](#uso)
-8. [Ejemplos](#ejemplos)
-9. [Pruebas](#pruebas)
-10. [Licencia](#licencia)
+7. [Test](#test)
+8. [Uso](#uso)
+9. [Ejemplos](#ejemplos)
+11. [Licencia](#licencia)
 
 ## Descripción
 
@@ -119,6 +119,31 @@ pip freeze > ./Practica3/requirements.txt
 - seaborn
 
 ## Estructura del Proyecto
+```text
+PRACTICAS
+📦 Practica3
+ ┣ 📂 ctg_viz
+ ┃ ┣ 📂 plots
+ ┃ ┃ ┣ 📝 barplots.py
+ ┃ ┃ ┣ 📝 boxplots.py
+ ┃ ┃ ┣ 📝 density.py
+ ┃ ┃ ┣ 📝 dotplot.py
+ ┃ ┃ ┣ 📝 heatmap.py
+ ┃ ┃ ┣ 📝 histograms.py
+ ┃ ┃ ┣ 📝 lineas.py
+ ┃ ┃ ┗ 📝 violin.py
+ ┃ ┣ 📝 __init__.py
+ ┃ ┣ 📝 categorization.py
+ ┃ ┗ 📝 preprocessing.py
+ ┣ 📂 data
+ ┃ ┗ 📝 CTG.csv
+ ┣ 📝 Practica3.ipynb
+ ┣ 📝 README.md
+ ┣ 📝 gitignore.txt
+ ┣ 📝 requirements.txt
+ ┗ 📝 utils.py
+LICENSE
+```
 
 
 ## Instalación
@@ -143,12 +168,21 @@ Para ver solo si todo paso correctamente
 ```bash
 pytest -q ./Practica3/utils.py
 ```
+## Uso
+
+
+
+
 
 ## Deteccion de outliers
 
 Hacemos deteccion de outliers para las variables continuas, y para las discretas no ya que al tener pocos valores la deteccion de outliers con pocar variables categoricas nos puede eliminar valores comunes (al tener clases mayoritarias)
 
 El proceso de eliminiacion va de variable en variable, eliminando iterativamente con los outliers que se detactan en cada variable anterior.
+
+En total eliminamos el 20% aproximadamente del conjunto total, esto para tener una mejor visualización de nuestros datos. Ya que al ser datos medicos la mejor ocpion para detectar outliers es tener los parametros en los que una persona viva no puede tener, mediante una investigación.
+
+Nosotros utilizamos IQR y Z-score eliminando los datos que coicidieran en ambos como outliers. Teniendo el siguiente resultado.
 
 Para la variable AC
 - Se detectaron 35 valores
@@ -188,3 +222,4 @@ Para la variable Median
 
 Para la variable Variance
 - Se detectaron 48 valores
+
