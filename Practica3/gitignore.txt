@@ -1,5 +1,7 @@
 # Ignorar todo
 *
+__pycache__/
+
 
 # Permitir entrar a las carpetas
 !*/

@@ -14,22 +14,19 @@ Integrante:
 2. [Diccionario de datos](#diccionario-de-datos)
 3. [Características](#características)
 4. [Requisitos](#requisitos)
-5. [Instalación](#instalación)
-6. [Uso](#uso)
-7. [Estructura del Proyecto](#estructura-del-proyecto)
+5. [Estructura del Proyecto](#estructura-del-proyecto)
+6. [Instalación](#instalación)
+7. [Uso](#uso)
 8. [Ejemplos](#ejemplos)
 9. [Pruebas](#pruebas)
-10. [Contribución](#contribución)
-11. [Licencia](#licencia)
+10. [Licencia](#licencia)
 
 ## Descripción
 
-Este proyecto permite realizar ___, utilizando ___ como herramientas principales.
+Este proyecto permite realizar analisis exploratorio, manejo de valores ausentes y extremos, utilizando funciones de python y funciones propias como herramientas principales.
 
 Incluye módulos para:
 - Limpieza de datos
-- Transformaciones
-- Generación de reportes
 - Modelado y validación
 
 ## Diccionario de datos
@@ -121,12 +118,13 @@ pip freeze > ./Practica3/requirements.txt
 - scikit-learn
 - seaborn
 
+## Estructura del Proyecto
+
+
 ## Instalación
 
 ```bash
-git clone https://github.com/usuario/proyecto.git
-cd proyecto
-pip install -r requirements.txt
+git clone https://github.com/JuanMi-Galan/Practica-3---Modulo-1.git
 ```
 
 ## Test
@@ -134,12 +132,12 @@ pip install -r requirements.txt
 Para la ejecución del test ejecutar:
 
 ```bash
-py -m pytest ./Practica3/utils.py
+pytest ./Practica3/utils.py
 ```
 Para ver detalles:
 
 ```bash
-py -m pytest -vv ./Practica3/utils.py
+pytest -vv ./Practica3/utils.py
 ```
 Para ver solo si todo paso correctamente
 ```bash
