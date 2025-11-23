@@ -114,7 +114,7 @@ pip freeze > ./Practica3/requirements.txt
 - pip
 - Git
 - pandas
-- pytes
+- pytest
 - matplotlib
 - scipy
 - typing

@@ -12,10 +12,6 @@
 !*.twb
 !*.py
 !*.txt
-!*.ps1
-!*.in
-!*.toml
-!*.md
 
 # Opcional: permitir README.md si quieres incluirlo
 *.parquet
