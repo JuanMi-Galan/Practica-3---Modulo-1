@@ -19,8 +19,7 @@ Integrante:
 7. [Test](#test)
 8. [Uso](#uso)
 10. [Consideraciones](#consideraciones)
-11. [Ejemplos](#ejemplos)
-12. [Licencia](#licencia)
+11. [Licencia](#licencia)
 
 ## Descripción
 
@@ -96,10 +95,11 @@ Incluye módulos para:
 
 ## Características
 
-- Procesamiento masivo de datos
-- Validaciones automáticas
-- Integración con API externa
-- Exportación a Excel/SQL
+- Procesamiento de datos
+- Analisis de datos
+- Deteccion de valores ausentes
+- Deteccion de outliers
+- Visualización
 - Pruebas con pytest
 
 ## Requisitos
@@ -112,6 +112,7 @@ En linux sin las versiones y se movio dentro de la carpeta Practica3:
 pip freeze | sed -E 's/==.*//' > ./Practica3requirements.txt
 ```
 
+Las librerias son las siguientes las cuales se pueden instalar en el entorno virtual el cualse va a ocupar.
 - Python 3.9+
 - pip
 - Git
@@ -128,28 +129,29 @@ La carpeta de la practica3 se encuentra dentro de la carpeta PRACTICAS, donde se
 
 ```text
 PRACTICAS
-📦 Practica3
- ┣ 📂 ctg_viz
- ┃ ┣ 📂 plots
- ┃ ┃ ┣ 📝 barplots.py
- ┃ ┃ ┣ 📝 boxplots.py
- ┃ ┃ ┣ 📝 density.py
- ┃ ┃ ┣ 📝 dotplot.py
- ┃ ┃ ┣ 📝 heatmap.py
- ┃ ┃ ┣ 📝 histograms.py
- ┃ ┃ ┣ 📝 lineas.py
- ┃ ┃ ┗ 📝 violin.py
- ┃ ┣ 📝 __init__.py
- ┃ ┣ 📝 categorization.py
- ┃ ┗ 📝 preprocessing.py
- ┣ 📂 data
- ┃ ┗ 📝 CTG.csv
- ┣ 📝 Practica3.ipynb
- ┣ 📝 README.md
- ┣ 📝 gitignore.txt
- ┣ 📝 requirements.txt
- ┗ 📝 utils.py
-LICENSE
+📦.venv <-Entorno Virtual
+📦Practica3
+ ┣ 📂ctg_viz
+ ┃ ┣ 📂plots
+ ┃ ┃ ┣ 📜barplots.py
+ ┃ ┃ ┣ 📜boxplots.py
+ ┃ ┃ ┣ 📜density.py
+ ┃ ┃ ┣ 📜dotplot.py
+ ┃ ┃ ┣ 📜heatmap.py
+ ┃ ┃ ┣ 📜histograms.py
+ ┃ ┃ ┣ 📜lineas.py
+ ┃ ┃ ┗ 📜violin.py
+ ┃ ┣ 📜__init__.py
+ ┃ ┣ 📜categorization.py
+ ┃ ┗ 📜preprocessing.py
+ ┣ 📂data
+ ┃ ┗ 📜CTG.csv
+ ┣ 📜.gitignore
+ ┣ 📜LICENSE
+ ┣ 📜Practica3.ipynb
+ ┣ 📜README.md
+ ┣ 📜requirements.txt
+ ┗ 📜utils.py
 ```
 
 
@@ -228,6 +230,11 @@ En el archivo `Practica3.ipynb` se puede ver el claro ejemplo de como funciona c
 - **`plot_dotplots(data, target_col)`**: Representa distribuciones mediante puntos, útil para comparar grupos categóricos.
 
 ## Consideraciones
+**Análisis de Completitud:**
+- Tabla de completitud ordenada por porcentaje de datos faltantes, ninguna supero el 20% por tanto ninguna fila se elimino.
+- Se identificaron columnas con valores nulos para tratamiento, solo 3 filas tienan valores ausentes, los cuales se imputaron.
+
+**Valores extremos:**
 
 Hacemos deteccion de outliers para las variables continuas, y para las discretas no ya que al tener pocos valores la deteccion de outliers con pocar variables categoricas nos puede eliminar valores comunes (al tener clases mayoritarias)
 
@@ -237,47 +244,56 @@ En total eliminamos el 20% aproximadamente del conjunto total, esto para tener u
 
 Nosotros utilizamos IQR y Z-score eliminando los datos que coicidieran en ambos como outliers. Teniendo el siguiente resultado.
 
-Para la variable AC
-- Se detectaron 35 valores
+| Variable | Valores detectados |
+|---------|---------------------|
+| AC      | 35 |
+| FM      | 31 |
+| UC      | 12 |
+| MSTV    | 31 |
+| ALTV    | 57 |
+| MLTV    | 29 |
+| DL      | 24 |
+| Max     | 11 |
+| Nmax    | 11 |
+| Mode    | 36 |
+| Mean    | 17 |
+| Median  | 2 |
+| Variance| 48 |
 
-Para la variable FM
-- Se detectaron 31 valores
+**Distribuciones de Variables Continuas:**
 
-Para la variable UC
-- Se detectaron 12 valores
+1. **Histogramas**: 16 variables continuas (ASTV, MSTV, ALTV, MLTV, LB, AC, FM, UC, DL, DP, Width, Min, Max, Nmax, Mode, Mean, Median, Variance) segmentadas por NSP
+2. **Gráficos de Densidad**: Curvas suavizadas para comparar distribuciones entre categorías NSP
 
-Para la variable MSTV
-- Se detectaron 31 valores
+**Detección de Outliers:**
 
-Para la variable ALTV
-- Se detectaron 57 valores
+3. **Boxplots**: Identificación visual de valores atípicos en todas las variables numéricas
+4. **Gráficos IQR/Z-score**: Visualización de outliers detectados por ambos métodos para cada variable
 
-Para la variable MLTV
-- Se detectaron 29 valores
+**Análisis de Variables Discretas:**
 
-Para la variable DL
-- Se detectaron 24 valores
+5. **Gráficos de Barras**: Frecuencias de 18 variables discretas (A, B, C, D, AD, DE, LD, FS, SUSP, CLASS, NSP, Tendency, etc.)
 
-Para la variable Max
-- Se detectaron 11 valores
+**Relaciones entre Variables:**
 
-Para la variable Nmax
-- Se detectaron 11 valores
+6. **Dot Plots**: Distribuciones de variables continuas segmentadas por categorías (A y NSP)
+7. **Violin Plots**: Combinación de densidad y distribución por categoría NSP
+8. **Mapa de Calor**: Matriz de correlaciones entre todas las variables numéricas
 
-Para la variable Mode
-- Se detectaron 36 valores
+**Análisis Temporal/Secuencial:**
 
-Para la variable Mean
-- Se detectaron 17 valores
+9. **Gráficos de Líneas**: Evolución de variables continuas a lo largo de las observaciones
 
-Para la variable Median
-- Se detectaron 2 valores
+**Calidad de Datos:**
+- La imputación diferenciada (moda para categóricas, mediana para enteros, KNN para decimales) mejoró significativamente la completitud del dataset
+- La detección y eliminación de outliers mediante IQR y Z-score redujo el ruido, conservando aproximadamente el 80 de los datos
+- Variables con alta proporción de valores nulos (>20%) requieren evaluación de su utilidad predictiva
+- Considerar análisis de sensibilidad con diferentes estrategias de imputación
 
-Para la variable Variance
-- Se detectaron 48 valores
-
-## Ejemplos
-
+**Patrones Identificados:**
+- Las distribuciones de variables varían significativamente entre las categorías NSP (Normal, Sospechoso, Patológico)
+- El mapa de correlaciones revela relaciones fuertes entre variables del mismo grupo (variabilidad a corto/largo plazo)
+- Variables como ASTV, MSTV, ALTV, MLTV muestran alta capacidad discriminativa entre estados fetales
 
 ## Licencia
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
