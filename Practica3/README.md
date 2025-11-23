@@ -15,11 +15,12 @@ Integrante:
 3. [Características](#características)
 4. [Requisitos](#requisitos)
 5. [Estructura del Proyecto](#estructura-del-proyecto)
-6. [Instalación](#instalación)
+6. [Clonación del proyecto](#clonación-del-proyecto)
 7. [Test](#test)
 8. [Uso](#uso)
-9. [Ejemplos](#ejemplos)
-11. [Licencia](#licencia)
+10. [Consideraciones](#consideraciones)
+11. [Ejemplos](#ejemplos)
+12. [Licencia](#licencia)
 
 ## Descripción
 
@@ -106,6 +107,10 @@ Para la optención de las librerias del entorno virtual se ejecuto:
 ```bash
 pip freeze > ./Practica3/requirements.txt
 ```
+En linux sin las versiones y se movio dentro de la carpeta Practica3:
+```bash
+pip freeze | sed -E 's/==.*//' > ./Practica3requirements.txt
+```
 
 - Python 3.9+
 - pip
@@ -119,6 +124,8 @@ pip freeze > ./Practica3/requirements.txt
 - seaborn
 
 ## Estructura del Proyecto
+La carpeta de la practica3 se encuentra dentro de la carpeta PRACTICAS, donde se creo un entorno virtual con las librerias mencionadas anteriormente.
+
 ```text
 PRACTICAS
 📦 Practica3
@@ -146,7 +153,7 @@ LICENSE
 ```
 
 
-## Instalación
+## Clonación del proyecto
 
 ```bash
 git clone https://github.com/JuanMi-Galan/Practica-3---Modulo-1.git
@@ -169,12 +176,58 @@ Para ver solo si todo paso correctamente
 pytest -q ./Practica3/utils.py
 ```
 ## Uso
+Se descraga la data de: https://www.kaggle.com/code/akshat0007/cardiotocology/data, esta se pondra dentro de la carpeta Practica3/data con el nombre de `CTG.csv`. Para posteriormente solo ejecutar el archivo `Practica3.ipynb`, el cual solo se tendria que modificar el nombre del archivo si es que no se modifico a `CTG.csv`.
 
+En el archivo `Practica3.ipynb` se puede ver el claro ejemplo de como funciona cada una de las funciones.
 
+### Descripción de Funciones Utilizadas
 
+**Funciones de Preprocesamiento:**
 
+- **`completitud_datos(data)`**: Analiza el porcentaje de valores faltantes por columna, ordenando de mayor a menor. Retorna un DataFrame con el conteo y porcentaje de valores nulos.
 
-## Deteccion de outliers
+- **`check_data_completeness_juan_miguel_galan_olivares(data)`**: Verifica la completitud general del dataset proporcionando estadísticas de valores nulos totales y por columna.
+
+- **`columnas_float_enteras(data)`**: Identifica y clasifica columnas numéricas según si contienen decimales o son valores enteros, facilitando la selección de estrategias de imputación.
+
+- **`SimpleImputer(strategy)`**: Imputa valores faltantes usando estrategias simples:
+  - `'most_frequent'`: Para variables categóricas (moda)
+  - `'median'`: Para variables numéricas enteras
+  - `'mean'`: Para variables con decimales
+
+- **`KNNImputer(n_neighbors)`**: Imputa valores basándose en los k vecinos más cercanos. Útil para variables interdependientes donde el contexto importa.
+
+**Funciones de Análisis:**
+
+- **`detect_outliers(data, methods, z_threshold, iqr_factor, plot, return_details)`**: Detecta valores atípicos usando:
+  - **IQR (Rango Intercuartílico)**: Identifica valores fuera de Q1-1.5*IQR y Q3+1.5*IQR
+  - **Z-score**: Detecta valores con |z| > threshold (típicamente 3)
+  - Retorna índices de outliers y permite visualización
+
+- **`clasificar_columnas_continuas_discretas(data)`**: Clasifica automáticamente las columnas en:
+  - **Continuas**: >10 valores únicos y tipo numérico
+  - **Discretas**: ≤10 valores únicos
+  - **Alta cardinalidad**: Muchos valores únicos (categóricas textuales)
+
+**Funciones de Visualización Estática (Matplotlib/Seaborn):**
+
+- **`plot_histograms(data, target_col)`**: Genera histogramas para distribuciones de variables continuas, con opción de segmentación por variable objetivo.
+
+- **`plot_boxplots(data, target_col)`**: Crea diagramas de caja para identificar outliers y comparar distribuciones entre grupos.
+
+- **`plot_barplots(data)`**: Visualiza frecuencias de variables discretas mediante gráficos de barras horizontales.
+
+- **`plot_density(data, target_col)`**: Grafica curvas de densidad de probabilidad para visualizar distribuciones suavizadas.
+
+- **`plot_heatmap(data, method)`**: Genera mapas de calor de correlaciones (Pearson, Spearman) entre variables numéricas.
+
+- **`plot_violins(data, target_col)`**: Combina boxplots con densidad (violin) y swarmplot para visualizaciones detalladas de distribuciones.
+
+- **`plot_lineplots(data, time_col)`**: Muestra tendencias temporales o secuenciales de variables continuas.
+
+- **`plot_dotplots(data, target_col)`**: Representa distribuciones mediante puntos, útil para comparar grupos categóricos.
+
+## Consideraciones
 
 Hacemos deteccion de outliers para las variables continuas, y para las discretas no ya que al tener pocos valores la deteccion de outliers con pocar variables categoricas nos puede eliminar valores comunes (al tener clases mayoritarias)
 
@@ -223,3 +276,11 @@ Para la variable Median
 Para la variable Variance
 - Se detectaron 48 valores
 
+## Ejemplos
+
+
+## Licencia
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+
+Este proyecto está disponible bajo la licencia MIT.  
+Consulta el archivo [LICENSE](LICENSE) para más detalles.
