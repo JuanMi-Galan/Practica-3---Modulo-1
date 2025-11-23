@@ -1,0 +1,24 @@
+# Ignorar todo
+*
+
+# Permitir entrar a las carpetas
+!*/
+
+# Permitir estos archivos
+!.gitignore
+!README.md
+!*.ipynb
+!*.hyper
+!*.twb
+!*.py
+!*.txt
+!*.ps1
+!*.in
+!*.toml
+!*.md
+
+# Opcional: permitir README.md si quieres incluirlo
+*.parquet
+*.csv
+*.parquet
+
