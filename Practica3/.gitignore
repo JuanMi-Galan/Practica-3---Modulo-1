@@ -14,6 +14,7 @@ __pycache__/
 !*.twb
 !*.py
 !*.txt
+!*.pdf
 
 # Opcional: permitir README.md si quieres incluirlo
 *.parquet
