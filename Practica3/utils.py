@@ -3,7 +3,6 @@ Módulo de utilidades para análisis de datos.
 
 Incluye funciones con tipado estático.
 """
-
 from typing import Any, Dict, List, Optional, Tuple, Union
 
 import pandas as pd
