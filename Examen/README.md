@@ -1,4 +1,5 @@
 # Análisis Predictivo de Calificaciones de Restaurantes
+Juan Miguel Galan Olivares
 
 ## Entregables
 • [.ipynb] Código utilizado para la construcción de la solución.
