@@ -1,0 +1,28 @@
+# Ignorar todo
+*
+__pycache__/
+
+
+# Permitir entrar a las carpetas
+!*/
+
+# Permitir estos archivos
+!.gitignore
+!README.md
+!*.ipynb
+!*.hyper
+!*.twb
+!*.py
+!*.txt
+!*LICENSE*
+!datos/
+!datos/*.csv
+!datos/*.png
+!datos/*.xlsx
+
+# Opcional: permitir README.md si quieres incluirlo
+*.parquet
+*.parquet
+*.pyc
+
+
