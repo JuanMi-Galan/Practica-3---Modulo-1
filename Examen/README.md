@@ -2,35 +2,56 @@
 Juan Miguel Galan Olivares
 
 ## Entregables
-• [.ipynb] Código utilizado para la construcción de la solución.
 
-Link: https://github.com/JuanMi-Galan/Practica-3---Modulo-1/blob/351518be40c0f939d8b7ea18158caeed6f36ab39/Examen/Examen.ipynb
+### Código de la solución
+- **Formato:** `.ipynb`  
+- **Descripción:** Código utilizado para la construcción de la solución completa del examen.  
+- **Link:**  
+  [Examen.ipynb](https://github.com/JuanMi-Galan/Practica-3---Modulo-1/blob/351518be40c0f939d8b7ea18158caeed6f36ab39/Examen/Examen.ipynb)
 
-• [.png] Imagenes del conjunto de datos reducido con PCA.
+---
 
-Link: https://github.com/JuanMi-Galan/Practica-3---Modulo-1/blob/351518be40c0f939d8b7ea18158caeed6f36ab39/Examen/datos/PCA.png
+### Reducción de dimensionalidad (PCA)
+- **Formato:** `.png`  
+- **Descripción:** Visualización del conjunto de datos reducido mediante Análisis de Componentes Principales (PCA).  
+- **Link:**  
+  [PCA.png](https://github.com/JuanMi-Galan/Practica-3---Modulo-1/blob/351518be40c0f939d8b7ea18158caeed6f36ab39/Examen/datos/PCA.png)
 
-• [.csv] Tablas analíticas de datos identificadas como restaurantes.csv y 
-usuarios.csv. 
+---
 
-Links: 
-- https://github.com/JuanMi-Galan/Practica-3---Modulo-1/blob/351518be40c0f939d8b7ea18158caeed6f36ab39/Examen/datos/data_analitica_con_nulos_y_outliers.csv
+### Tablas analíticas de datos
+- **Formato:** `.csv`  
+- **Descripción:** Tablas analíticas generadas durante el proceso de análisis, antes y después del tratamiento de valores nulos y outliers.
 
-- https://github.com/JuanMi-Galan/Practica-3---Modulo-1/blob/351518be40c0f939d8b7ea18158caeed6f36ab39/Examen/datos/data_analitica_sin_nulos_ni_outliers.csv
+**Archivos:**
+- [data_analitica_con_nulos_y_outliers.csv](https://github.com/JuanMi-Galan/Practica-3---Modulo-1/blob/351518be40c0f939d8b7ea18158caeed6f36ab39/Examen/datos/data_analitica_con_nulos_y_outliers.csv)  
+- [data_analitica_sin_nulos_ni_outliers.csv](https://github.com/JuanMi-Galan/Practica-3---Modulo-1/blob/351518be40c0f939d8b7ea18158caeed6f36ab39/Examen/datos/data_analitica_sin_nulos_ni_outliers.csv)
 
-• [url/.pdf] Tablero dinámico funcional. Esto solo en caso de haber realizado tablero. 
+---
 
-Link: https://public.tableau.com/views/Restaurantes-Clientes/Restaurantes-Clientes?:language=es-ES&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
+### Tablero dinámico (opcional)
+- **Formato:** URL / `.pdf`  
+- **Descripción:** Tablero dinámico funcional desarrollado en Tableau para la exploración y visualización de los datos.  
+- **Link:**  
+  [Restaurantes – Clientes (Tableau Public)](https://public.tableau.com/views/Restaurantes-Clientes/Restaurantes-Clientes?:language=es-ES&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
-• [.pdf] Elaboración de un documento entregando todos los puntos. Este README.md en pdf.
+---
 
-Link: https://github.com/JuanMi-Galan/Practica-3---Modulo-1/blob/351518be40c0f939d8b7ea18158caeed6f36ab39/Examen/README.md
+### Documento final
+- **Formato:** `.pdf`  
+- **Descripción:** Documento que integra y explica todos los puntos solicitados en la práctica.  
+- **Link:**  
+  [README.md](https://github.com/JuanMi-Galan/Practica-3---Modulo-1/blob/351518be40c0f939d8b7ea18158caeed6f36ab39/Examen/README.md)
 
-### Adicionales
+---
 
-• [.link/.pdf] Grafica del modelo entidad de los datos utilizados, para su contextualización.
+## Adicionales
 
-Link: https://miro.com/app/board/uXjVGfOj0JE=/?share_link_id=7282565746
+### 🧩 Modelo entidad–relación
+- **Formato:** Link / `.pdf`  
+- **Descripción:** Diagrama del modelo entidad de los datos utilizados para su contextualización.  
+- **Link:**  
+  [Modelo Entidad – Miro](https://miro.com/app/board/uXjVGfOj0JE=/?share_link_id=7282565746)
 
 ### Cuestionario 
 • (0.5 puntos) ¿Por qué Excel no es una Base de Datos? Elabore.
