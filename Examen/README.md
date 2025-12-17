@@ -47,11 +47,11 @@ Juan Miguel Galan Olivares
 
 ## Adicionales
 
-### 🧩 Modelo entidad–relación
+### Modelo entidad–relación
 - **Formato:** Link / `.pdf`  
 - **Descripción:** Diagrama del modelo entidad de los datos utilizados para su contextualización.  
 - **Link:**  
-  [Modelo Entidad – Miro](https://miro.com/app/board/uXjVGfOj0JE=/?share_link_id=7282565746)
+  [Modelo Entidad – Miro](https://miro.com/app/board/uXjVGfOj0JE=/?share_link_id=271695651520)
 
 ### Cuestionario 
 • (0.5 puntos) ¿Por qué Excel no es una Base de Datos? Elabore.
