@@ -1,5 +1,66 @@
 # Análisis Predictivo de Calificaciones de Restaurantes
 
+## Entregables
+• [.ipynb] Código utilizado para la construcción de la solución.
+
+Link: https://github.com/JuanMi-Galan/Practica-3---Modulo-1/blob/351518be40c0f939d8b7ea18158caeed6f36ab39/Examen/Examen.ipynb
+
+• [.png] Imagenes del conjunto de datos reducido con PCA.
+
+Link: https://github.com/JuanMi-Galan/Practica-3---Modulo-1/blob/351518be40c0f939d8b7ea18158caeed6f36ab39/Examen/datos/PCA.png
+
+• [.csv] Tablas analíticas de datos identificadas como restaurantes.csv y 
+usuarios.csv. 
+
+Links: 
+- https://github.com/JuanMi-Galan/Practica-3---Modulo-1/blob/351518be40c0f939d8b7ea18158caeed6f36ab39/Examen/datos/data_analitica_con_nulos_y_outliers.csv
+
+- https://github.com/JuanMi-Galan/Practica-3---Modulo-1/blob/351518be40c0f939d8b7ea18158caeed6f36ab39/Examen/datos/data_analitica_sin_nulos_ni_outliers.csv
+
+• [url/.pdf] Tablero dinámico funcional. Esto solo en caso de haber realizado tablero. 
+
+Link: https://public.tableau.com/views/Restaurantes-Clientes/Restaurantes-Clientes?:language=es-ES&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
+
+• [.pdf] Elaboración de un documento entregando todos los puntos. Este README.md en pdf.
+
+Link: https://github.com/JuanMi-Galan/Practica-3---Modulo-1/blob/351518be40c0f939d8b7ea18158caeed6f36ab39/Examen/README.md
+
+### Adicionales
+
+• [.link/.pdf] Grafica del modelo entidad de los datos utilizados, para su contextualización.
+
+Link: https://miro.com/app/board/uXjVGfOj0JE=/?share_link_id=7282565746
+
+### Cuestionario 
+• (0.5 puntos) ¿Por qué Excel no es una Base de Datos? Elabore.
+
+Excel no es una base de datos porque no garantiza integridad, seguridad ni concurrencia de usuarios. Además, no está diseñado para manejar grandes volúmenes de información ni transacciones de forma eficiente.
+
+En cambio, una base de datos está diseñada para almacenar, consultar y proteger grandes volúmenes de información de manera eficiente, consistente y escalable.
+
+• (0.5 puntos) ¿Qué diferencia hay entre un Ingeniero de Datos, un Científico de Datos y un Arquitecto de Datos? 
+
+El Ingeniero de Datos construye y mantiene los flujos de datos, asegurando que la información llegue limpia, estructurada y disponible desde las fuentes hasta los sistemas analíticos; el Científico de Datos analiza y modela para generar predicciones,aplicando estadística, machine learning y conocimiento del negocio; y el Arquitecto de Datos diseña la estructura y estrategia del sistema de datos, definiendo cómo se almacenan, integran y gobiernan los datos a nivel organizacional.
+
+• (0.5 puntos) ¿Cómo reduce dimensiones PCA? 
+
+PCA reduce dimensiones transformando variables correlacionadas en componentes principales no correlacionadas que conservan la mayor varianza con menos variables.
+
+Estas componentes son combinaciones lineales de las variables originales y se ordenan según la cantidad de varianza que explican.
+
+• (0.5 puntos) ¿Cuál es la diferencia entre importancia de variables y poder predictivo? 
+
+La importancia de variables indica qué tan relevante es una variable dentro de un modelo específico, por ejemplo, cuánto contribuye a una predicción en un árbol o modelo de machine learning.
+
+El poder predictivo, en cambio, mide qué tan bien una variable puede discriminar o predecir el resultado por sí misma, independientemente del modelo, usando métricas como IV, AUC o correlación con la variable objetivo.
+
+Una variable puede tener alta importancia en un modelo por interacción con otras, pero bajo poder predictivo individual, y viceversa.
+
+### Feedback
+(0 puntos) Por favor, aporte comentarios sobre el avance del curso, el ponente y las clases. El objetivo es poder mejorar los contenidos y el desarrollo del diplomado. 
+
+Los temas contemplados en el módulo sí se revisaron de acuerdo con el programa. Sin embargo, me hubiera gustado que se profundizara un poco más en cómo aplicar estos conceptos en distintos contextos, dedicando más tiempo a la explicación y al análisis de los temas antes de pasar directamente a la práctica. En algunos casos, la práctica consumió la mayor parte del tiempo del módulo, por lo que considero que un mayor énfasis en la parte conceptual y su aplicación gradual habría enriquecido el aprendizaje.
+
 ## Descripción del Proyecto
 
 ### Contexto de Negocio
@@ -83,8 +144,10 @@ La unidad muestral permite la unión de información de usuarios y restaurantes,
 ### Instalación
 
 ```bash
-# Clonar el repositorio
-cd Examen
+# Clonar el repositorio (se encuentra en la carpeta Examen)
+https://github.com/JuanMi-Galan/Practica-3---Modulo-1.git
+
+git@github.com:JuanMi-Galan/Practica-3---Modulo-1.git
 
 # Instalar dependencias
 pip install -r requirements.txt
